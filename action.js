@@ -25,7 +25,7 @@ reset = document.getElementById('reset-icon');
 
 dateCol.forEach(function (li) {
     li.style.pointerEvents = "none";
-})
+});
 
 //Months Options Creation
 months.forEach(function (mo) {
@@ -109,40 +109,7 @@ action.addEventListener('click', function () {
         }
         let startDate = dateIndex % 7;
         clearValue();
-        let newMonth = e.options[e.selectedIndex].textContent;
-        var yearActive = yearPicker.options[yearPicker.selectedIndex].textContent;
-        if (newMonth === "May" || newMonth === "Jul" || newMonth === "Oct" || newMonth === "Dec") {
-            let newStart = startDate + 3;
-            newStart = dayReset(newStart);
-            dateLoop(newStart, 31);
-        }
-        else if (newMonth === "Mar") {
-            if (yearActive % 4 === 0) {
-                let newStart = startDate + 2;
-                newStart = dayReset(newStart);
-                dateLoop(newStart, 31);
-            }
-            else {
-                let newStart = startDate + 1;
-                newStart = dayReset(newStart);
-                dateLoop(newStart, 31);
-            }
-        }
-        else if (newMonth === "Jan" || newMonth === "Aug") {
-            let newStart = startDate + 4;
-            newStart = dayReset(newStart);
-            dateLoop(newStart, 31);
-        }
-        else if (newMonth === "Feb") {
-            let newStart = startDate + 4;
-            newStart = dayReset(newStart);
-            yearActive % 4 === 0 ? dateLoop(newStart, 29) : dateLoop(newStart, 28);
-        }
-        else {
-            let newStart = startDate + 4;
-            newStart = dayReset(newStart);
-            dateLoop(newStart, 30);
-        }
+        changeDates();
     }
     else if (target.classList.contains('left')) {
         dateCol.forEach(function (da) {
@@ -162,30 +129,7 @@ action.addEventListener('click', function () {
         }
         let startDate = dateIndex % 7;
         clearValue();
-        let newMonth = e.options[e.selectedIndex].textContent;
-        var yearActive = yearPicker.options[yearPicker.selectedIndex].textContent;
-        if (newMonth === "Jan" || newMonth === "Mar" || newMonth === "May" || newMonth === "Jul" || newMonth === "Aug" || newMonth === "Oct" || newMonth === "Dec") {
-            let newStart = startDate - 3;
-            newStart < 0 ? newStart = 7 + newStart : newStart = newStart;
-            dateLoop(newStart, 31);
-        }
-        else if (newMonth === "Feb") {
-            if (yearActive % 4 === 0) {
-                let newStart = startDate - 1;
-                newStart < 0 ? newStart = 7 + newStart : newStart = newStart;
-                dateLoop(newStart, 29);
-            }
-            else {
-                let newStart = startDate - 0;
-                newStart < 0 ? newStart = 7 + newStart : newStart = newStart;
-                dateLoop(newStart, 28);
-            }
-        }
-        else {
-            let newStart = startDate - 2;
-            newStart < 0 ? newStart = 7 + newStart : newStart = newStart;
-            dateLoop(newStart, 30);
-        }
+        changeDates();
     }
 })
 
