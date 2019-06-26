@@ -157,8 +157,10 @@ dateHolder.forEach(date => {
         })
         date.classList.add('active');
         let newActiveDate = parseInt(date.textContent);
+        let newActiveDay = new Date(selectedYear, selectedMonthIndex, newActiveDate);
         getActiveMonthYear();
-        datePicker.value = newActiveDate + "/" + (selectedMonthIndex + 1) + "/" + selectedYear + ", " + activeDay;
+        datePicker.value = newActiveDate + "/" + (selectedMonthIndex + 1) + "/" + selectedYear + ", " + days[newActiveDay.getDay()];
+        wrapper.classList.remove('show');
     });
 });
 
