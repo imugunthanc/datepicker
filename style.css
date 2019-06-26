@@ -1,29 +1,25 @@
 * {
   -webkit-tap-highlight-color: transparent;
-  box-sizing: border-box;
-}
+  box-sizing: border-box; }
 
 body, input, select {
-  font-family: "Open Sans", sans-serif;
-  font-size: 14px;
-}
+  font-family: 'Open Sans', sans-serif;
+  font-size: 14px; }
 
 .date-picker-wrap {
   position: relative;
-  display: inline-block;
-}
+  display: inline-block; }
 
 input {
   width: 180px;
   height: 38px;
-  border: 1px solid grey;
+  border: 1px solid #ccc;
   border-radius: 3px;
   padding: 3px 10px;
   cursor: pointer;
   outline: none;
   background: white;
-  text-align: left;
-}
+  text-align: left; }
 
 .event-icon {
   position: absolute;
@@ -31,8 +27,7 @@ input {
   right: 10px;
   cursor: pointer;
   color: blue;
-  pointer-events: none;
-}
+  pointer-events: none; }
 
 .date-picker-dropdown {
   position: absolute;
@@ -47,71 +42,58 @@ input {
   opacity: 0;
   max-height: 0;
   visibility: hidden;
-  transition: all 0.4s ease;
-}
+  transition: all 0.4s ease; }
 
 .calendar {
-  width: 100%;
-}
+  width: 100%; }
 
 td, th {
   width: 39px;
   height: 39px;
   text-align: center;
   padding: 10px 0;
-  border-radius: 50%;
-}
+  border-radius: 50%; }
 
 td {
   cursor: pointer;
-  transition: all 0.3s ease;
-}
-td.active {
-  color: white;
-  background: blue;
-}
-td.active:hover {
-  background: blue;
-}
-td:hover {
-  background: #ccc;
-}
+  transition: all 0.3s ease; }
+  td.active {
+    color: white;
+    background: blue; }
+    td.active:hover {
+      background: blue; }
+  td:hover {
+    background: #ccc; }
 
 header {
   display: flex;
   align-items: center;
-  padding: 15px 0;
-}
-header .actions {
-  margin-left: auto;
-}
-header .material-icons {
-  font-size: 22px;
-  line-height: 30px;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  background: white;
-  border: 1px solid #ccc;
-  outline: none;
-  border-radius: 50%;
-}
-header #nav-right {
-  margin-left: 10px;
-}
+  padding: 15px 0; }
+  header .actions {
+    margin-left: auto; }
+  header .material-icons {
+    font-size: 22px;
+    line-height: 30px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    background: white;
+    border: 1px solid #ccc;
+    outline: none;
+    border-radius: 50%; }
+  header #nav-right {
+    margin-left: 10px; }
 
 select {
   border: none;
   padding: 3px 10px;
   outline: none;
   cursor: pointer;
-  background: white;
-}
+  background: white; }
 
 .date-picker.show .date-picker-dropdown {
   max-height: 400px;
   opacity: 1;
-  visibility: visible;
-}
+  visibility: visible; }
 
 #reset-icon {
   display: inline-block;
@@ -125,7 +107,6 @@ select {
   background: white;
   border: 1px solid #ccc;
   outline: none;
-  border-radius: 50%;
-}
+  border-radius: 50%; }
 
 /*# sourceMappingURL=style.css.map */
